@@ -1,0 +1,156 @@
+q1
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Student {
+    private:
+    string name;
+
+
+    public:
+    Student(string name1="Unknown"):
+    name(name1) {}
+
+
+    void printName() {
+        cout << name << endl;
+    }
+};
+
+int main() {
+    Student test_student("test_name"); // in brackets passed name
+    Student unknown_test_student;
+    test_student.printName();
+    unknown_test_student.printName();
+}
+q8
+#include<iostream>
+using namespace std;
+#define PI 3.1416
+
+// function prototypes
+float volume(float length, float breadth, float height);
+float volume(float radius);
+float volume(float radius, float height);
+
+int main(){
+	float cube_l = 40.0, cube_b = 30.0, cube_h = 10.0;
+	float sphere_r = 2.5;
+	float cylinder_r = 2.5, cylinder_h = 10.0;
+	cout<<"Volume of Cube ="<<volume(cube_l, cube_b, cube_h)<<endl;
+	cout<<"Volume of Sphere ="<<volume(sphere_r)<<endl;
+	cout<<"Volume of Cylinder ="<<volume(cylinder_r, cylinder_h)<<endl;
+	return 0;
+}
+// function defination
+float volume(float length, float breadth, float height){
+	return length * breadth * height;
+}
+float volume(float radius){
+	return (4.0/3.0) * PI * radius * radius *radius; 
+}
+float volume(float radius, float height){
+	return PI * radius *radius * height;
+}
+q3
+include <iostream>
+using namespace std;
+
+class Area
+{
+public:
+    void output(int l, int b)
+    {
+        cout<<"Area of Rectangle is = "<<l*b<<endl;
+    }
+
+    void output(int a)
+    {
+        cout<<"Area of Square is = "<<a*a<< endl;
+    }
+};
+
+int main()
+{
+    Area obj;
+    obj.output(5,6);
+    obj.output(5);
+}
+q5
+#include <iostream>
+using namespace std;
+
+class degree{
+ public:
+  degree()
+  {
+   cout<<"I got a degree."<<endl;
+  }
+};
+class undergraduate:public degree{
+ public:
+  undergraduate()
+  {
+   cout<<"I am an Undergraduate"<<endl;
+  }
+};
+class postgraduate:public degree{
+ public:
+  postgraduate()
+  {
+   cout<<"I am a Postgraduate";
+  }
+};
+int main()
+{
+ undergraduate u;
+ postgraduate p;
+
+}
+q9
+#include<iostream>
+#include<stdio.h>
+#include<string.h>
+using namespace std;
+
+class String
+{
+        char str[20];
+        public:
+
+          void getdata()
+        {
+             gets(str);
+
+        }
+
+         int operator ==(String s)
+        {
+               if(!strcmp(str,s.str))
+                return 1;
+
+                return 0;
+        }
+};
+
+int main()
+{
+        String s1,s2;
+
+        cout<<"Enter first string :: ";
+        s1.getdata();
+        cout<<"\nEnter second string :: ";
+        s2.getdata();
+        if(s1==s2)
+        {
+            cout<<"\nStrigs are Equal\n";
+        }
+        else
+        {
+            cout<<"\nStrings are Not Equal\n";
+        }
+
+        return 0;
+}
